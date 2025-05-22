@@ -24,11 +24,6 @@ body {
   100% { background-position: 100% 100%; }
 }
 
-.contenido {
-  position: relative;
-  z-index: 1;
-}
-
 header {
   background: #111;
   display: flex;
@@ -178,22 +173,31 @@ h2 {
   box-shadow: 0 4px 20px rgba(255,0,0,0.2);
 }
 
-.galeria .imagenes {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+.logo-centro {
+  display: block;
+  margin: 80px auto 0 auto;
+  width: 650px;
+  height: 550px;
 }
 
-.galeria img {
-  width: 280px;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.692);
 }
 
-.galeria img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+.video-container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
 }
 
 .contacto .btn {
@@ -208,36 +212,7 @@ footer {
   color: #aaa;
 }
 
-.logo-centro {
-  display: block;
-  margin: 80px auto 0 auto;
-  width: 650px;
-  height: 550px;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.692);
-}
-
-.video-container iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border: none;
-}
-
-/* -------------------------------
-   🔽 Adaptación Responsive (Móvil)
--------------------------------- */
+/* Responsive */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
@@ -250,11 +225,6 @@ footer {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0;
-  }
-
-  nav ul li {
-    margin-bottom: 0.5rem;
   }
 
   .hero {
@@ -272,12 +242,10 @@ footer {
 
   .logo h1 {
     font-size: 1.5rem;
-    text-align: center;
   }
 
   .logo img {
     height: 50px;
-    margin-right: 0;
   }
 
   .logo-centro {
@@ -295,26 +263,10 @@ footer {
     max-width: 90%;
   }
 
-  .galeria .imagenes {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .galeria img {
-    width: 90%;
-  }
-
   .video-container {
     max-width: 90%;
-    aspect-ratio: 1 / 1;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
+    aspect-ratio: 16 / 9;
     margin-top: 20px;
-  }
-
-  .video-container iframe {
-    top: 0;
-    left: 0;
   }
 
   section {
